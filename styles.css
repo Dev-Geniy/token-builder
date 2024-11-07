@@ -1,0 +1,354 @@
+body {
+    font-family: Arial, sans-serif; 
+    margin: 0;
+    padding: 20px;
+    background-color: #1b1b1b; /* Темный фон */
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #00e5ff;
+    margin: 30px 0;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+}
+
+h3 {
+    color: #00e5ff;; /* Задаем белый цвет для заголовков h3 */
+        }
+
+.input-container {
+    max-width: 600px; /* Максимальная ширина контейнера */
+    margin: 20px auto; /* Центрирование контейнера */
+    padding: 20px; /* Внутренние отступы */
+    background: linear-gradient(to bottom right, #292929, #383838); /* Градиентный фон */
+    border-radius: 10px; /* Скругленные углы */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Тень */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px; /* Отступы вокруг меток */
+    font-size: 1.1rem;
+    color: #b0bec5; /* Серый цвет для меток */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px); /* Уменьшаем ширину на отступы */
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #2e2e2e; /* Цвет фона полей ввода */
+    color: #e0e0e0; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Скругленные углы */
+    box-shadow: inset 0 0 8px rgba(0, 229, 255, 0.2); /* Внутренняя тень */
+    transition: border-color 0.3s; /* Плавный переход цвета рамки */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    outline: none; /* Убираем стандартный контур */
+    border-color: #007bff; /* Цвет рамки при фокусе */
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет переносить чекбоксы на следующую строку */
+    align-items: center; /* Центрируем элементы по вертикали */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.input-group label {
+    margin-right: 10px; /* Отступ между чекбоксом и меткой */
+    color: #b0bec5; /* Цвет текста метки */
+}
+
+/* Стиль для модального окна */
+.modal-content {
+    padding: 30px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1e1e2f, #3a3a5c);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+    margin: 5% auto;
+    color: #f0f8ff;
+}
+
+/* Стили для преимуществ */
+.benefits {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.benefit-item {
+    flex: 1 1 45%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #292929;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.benefit-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 255, 255, 0.3);
+}
+
+.benefit-item img {
+    max-width: 60px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 5px #00e5ff);
+}
+
+/* Центрированный текст внизу */
+.centered-text {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 1.1rem;
+    color: #b0bec5;
+}
+
+/* Кнопка */
+button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #007bff, #00e5ff);
+    color: #121212;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0056b3, #00bfff);
+    box-shadow: 0 6px 18px rgba(0, 229, 255, 0.5);
+}
+
+/* Эффект затемнения фона модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding-top: 50px;
+}
+
+/* Стилизация контейнера кода */
+.generated-code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1a1a1a;
+    color: #d1d1d1;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    white-space: pre-line;
+    overflow: auto;
+    max-height: 300px;
+    border: 1px solid #333;
+    box-shadow: inset 0 0 10px #000000, 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Эффект углубления */
+.modal-content {
+    background-color: #2e2e2e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8), 0 10px 15px rgba(0, 255, 255, 0.3);
+}
+
+/* Подсветка синтаксиса с неоном */
+.generated-code .keyword { color: #00e5ff; font-weight: bold; }
+.generated-code .function { color: #76ff03; }
+.generated-code .string { color: #ff4081; }
+.generated-code .comment { color: #999999; font-style: italic; }
+.generated-code .variable { color: #ffea00; }
+
+/* Эффект неонового свечения */
+@keyframes neonGlow {
+    0%, 100% {
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.8), 0 0 12px rgba(0, 255, 255, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 16px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 1);
+    }
+}
+
+.generated-code .keyword,
+.generated-code .function,
+.generated-code .string,
+.generated-code .comment,
+.generated-code .variable {
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Скрытие полос прокрутки для всей страницы */
+body {
+    overflow: auto; /* Разрешаем прокрутку, но скрываем полосу */
+    scrollbar-width: thin; /* Firefox: убирает или делает полосу тоньше */
+}
+
+/* Скрытие полос прокрутки на всех элементах */
+*::-webkit-scrollbar {
+    width: 0; /* Убираем горизонтальную полосу для WebKit браузеров */
+    height: 0; /* Убираем вертикальную полосу для WebKit браузеров */
+}
+
+/* Включаем прокрутку для модальных окон, но скрываем полосы */
+.modal {
+    overflow: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+.modal::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+/* Прогресс-бар */
+#scanContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#progressBarContainer {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#progressBar {
+    width: 0;
+    height: 20px;
+    background-color: #4caf50;
+    background: linear-gradient(45deg, #0056b3, #00bfff);
+    transition: width 1s ease;
+}
+
+#scanStatus {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.secure {
+    background-color: #4caf50; /* Зеленый цвет для защищенности */
+}
+
+.vulnerable {
+    background-color: #ff6b6b; /* Красный цвет для уязвимостей */
+}
+
+#scanResult {
+    margin-top: 15px;
+    font-size: 1.1rem;
+}
+
+.secure-icon, .vulnerable-icon {
+    font-size: 2rem;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* КОНТЕЙНЕР СКАЧАТЬ */
+#buttonContainer {
+    display: block; /* Это позволяет контейнеру обертывать кнопку */
+    padding: 15px; /* Отступы внутри контейнера */
+    border: 2px dashed white; /* Белая штриховая граница */
+    border-radius: 8px; /* Скругление углов */
+    background-color: transparent; /* Прозрачный фон */
+    box-sizing: border-box; /* Учитывать границу в общей ширине/высоте */
+}
+
+/* ИНФО МОДАЛ*/
+/* Стили для значка "i" */
+/* Контейнер для кнопки и иконки, чтобы они располагались в строку */
+.button-container {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 10px; /* Расстояние между кнопкой и иконкой */
+}
+
+/* Стили для значка "i" */
+.info-icon {
+    cursor: pointer;
+    width: 32px; /* Устанавливаем размер иконки */
+    height: 32px; /* Устанавливаем размер иконки */
+    transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.info-icon:hover {
+    transform: scale(1.2); /* Увеличиваем иконку при наведении */
+}
+
+/* Стили для модального окна */
+.info-modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 1; /* Сверху */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Черный фон с прозрачностью */
+    color: white;
+    padding-top: 60px;
+}
+
+.info-modal .modal-content {
+    background-color: #333;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+}
+
+#closeModal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#closeModal:hover,
+#closeModal:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.info-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.info-icon:hover {
+    color: #ff9800;
+}
