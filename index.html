@@ -70,10 +70,12 @@
         <h1>Your smart-contract is ready!</h1>
 <h3>Your token code:</h3>
       <div id="generatedCode" class="generated-code"></div>
+      
+      <div id="buttonContainer">
            <div id="scanContainer">
                  <div class="button-container">
         <!-- Значок "i" для открытия модального окна с информацией -->
-        <img id="infoIcon" class="info-icon" src="https://cdn1.iconfinder.com/data/icons/shopping-26/48/info-64.png" alt="Информация" /><div id="scanStatus">Готов к сканированию</div>
+        <img id="infoIcon" class="info-icon" src="https://cdn1.iconfinder.com/data/icons/shopping-26/48/info-64.png" alt="Информация" /><div id="scanStatus">Ready to scan</div>
              </div>
         <div id="progressBarContainer">
             <div id="progressBar"></div>
@@ -82,32 +84,33 @@
                  <!-- Значок "i" для открытия модального окна с информацией -->
     
             <div class="button-container">
-        <button id="scanButton">Запустить сканирование на уязвимости</button>   
-    </div>
-    </div>
-     
+        <button id="scanButton">Run a vulnerability scan</button>   
+           </div>
+         </div>
+      </div>
+  
 <!-- Модальное окно с информацией -->
 <div id="infoModal" class="info-modal">
     <div class="modal-content">
         <span class="close" id="closeModal">&times;</span>
-        <h2>Информация о сканировании на уязвимости</h2>
-        <p>Наш инструмент сканирует ваш смарт-контракт на наличие следующих уязвимостей:</p>
+        <h2>Vulnerability scanning information</h2>
+        <p>Our tool scans your smart contract for the following vulnerabilities:</p>
         <ul>
-            <li><strong>Переполнение чисел:</strong> Проверяется, чтобы числа в контракте не превышали безопасные границы, что может привести к ошибкам выполнения.</li>
-            <li><strong>Несанкционированный доступ:</strong> Ищутся hardcoded админ-пароли и другие слабые места, которые могут дать злоумышленникам доступ к важным функциям контракта.</li>
-            <li><strong>SQL-инъекции:</strong> Если контракт взаимодействует с базой данных, проверяется на наличие уязвимостей, позволяющих злоумышленникам выполнить произвольные SQL-запросы.</li>
+            <li><strong>Number overflow:</strong>It is checked that the numbers in the contract do not exceed safe limits, which can lead to execution errors.</li>
+            <li><strong>Unauthorized access</strong> They look for hardcoded admin passwords and other weak points that could give attackers access to important contract functions.</li>
+            <li><strong>SQL-injections:
+</strong>If the contract interacts with the database, it is checked for vulnerabilities that could allow attackers to execute arbitrary SQL-queries.</li>
         </ul>
-        <p>Если уязвимости не были обнаружены, это значит, что ваш код безопасен от самых распространённых атак. Мы убедились, что:</p>
+        <p>If no vulnerabilities were found, this means that your code is safe from the most common attacks. We made sure that:</p>
         <ul>
-            <li>Ваши данные защищены от переполнений и неправильных вычислений.</li>
-            <li>Контракт не содержит известных уязвимостей для несанкционированного доступа.</li>
-            <li>Ваши операции безопасны, и не будет возможности провести атакующие запросы.</li>
+            <li>Your data is protected from overflows and incorrect calculations.</li>
+            <li>The contract contains no known vulnerabilities for unauthorized access.</li>
+            <li>Your transactions are secure and there will be no opportunity for attacking requests.</li>
         </ul>
-        <p>Таким образом, вы избегаете основных проблем и обеспечиваете высокий уровень безопасности вашего контракта!</p>
+        <p>This way you avoid major problems and ensure a high level of security for your contract!</p>
     </div>
 </div> 
       
-<div id="buttonContainer">
         <h3>Then we give you, you get:</h3>
         <div class="benefits">
             <div class="benefit-item">
@@ -128,23 +131,26 @@
                 <p>4. Recommendation database, lists of services and tools for tracking statistics, monitoring and managing smart contracts and users.</p>
             </div>
         </div>
-<button onclick="window.open('https://nowpayments.io/payment?iid=4930937419', '_blank')">Download 25 USD</button>
-</div>
+  <div id="buttonContainer">
+      <div id="PayContainer">
+<p style="text-align: center;">Pay to CRYPTO: <strike>$200</strike> now for only <strong>25 USD</strong> — an exclusive offer! <br> Don't miss the chance to get access to this amazing deal!</p>
+<button style="display: block; margin: 0 auto;" onclick="window.open('https://nowpayments.io/payment?iid=4930937419', '_blank')">Download Code 25 USD</button>
+      </div>
       
 <div id="downloadContainer" style="display: none;">
-<div id="buttonContainer">
-<h3 class="heading">Теперь вы можете загрузить код и документацию:</h3>
+<h3 class="heading">You can now download the code and documentation:</h3>
 <ul class="document-list">
-    <li>Пошаговая инструкция по запуску токена</li>
-    <li>Подсказки по управлению вашим токеном</li>
-    <li>Рекомендации для успешного листинга на бирже</li>
-    <li>Стратегии для продвижения токена</li>
+    <li>Step-by-step instructions for launching a token</li>
+    <li>Tips for managing your token</li>
+    <li>Recommendations for a successful stock exchange listing</li>
+    <li>Strategies for token promotion</li>
 </ul>
-
+       <div id="scanContainer">
     <button id="downloadButton">⤵ Download Code!</button>
     <button id="downloadDocsButton">⤵ Download Docs!</button>
-</div>
-</div>
+       </div>
+     </div>
+   </div>
       
         <p class="centered-text">Documents about the code itself with information and step-by-step instructions for setting it up, launching it, with tips for promotion and useful free programs are included and all of the above.</p>
     </div>
