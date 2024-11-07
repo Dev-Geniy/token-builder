@@ -122,13 +122,14 @@ button {
     margin: 30px auto;
     padding: 12px 30px;
     background: linear-gradient(45deg, #007bff, #00e5ff);
-    color: #121212;
+    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: bold;
     transition: background-color 0.3s, box-shadow 0.3s;
+    animation: pulse 1.5s infinite ease-in-out;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
