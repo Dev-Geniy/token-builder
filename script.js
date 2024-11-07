@@ -477,6 +477,7 @@ window.onload = function() {
 
     if (paymentStatus === "paid") {
         document.getElementById("downloadContainer").style.display = "block"; // Показываем контейнер
+ document.getElementById("PayContainer").style.display = "none"; // Скрываем контейнер с оплатой
     }
 };
 
@@ -489,5 +490,6 @@ window.onload = function() {
 
     if (localStorage.getItem("paymentStatus") === "paid") {
         document.getElementById("downloadContainer").style.display = "block";
+ document.getElementById("PayContainer").style.display = "none"; // Скрываем контейнер с оплатой
     }
 };
