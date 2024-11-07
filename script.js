@@ -370,7 +370,7 @@ function downloadMultipleDocs() {
         3. Функция mint: Создание новых токенов.
         (добавьте все функции, выбранные пользователем)
     `;
-
+  
     const deploymentPlan = `
         Пошаговый план развертывания смарт-контракта:
         1. Подготовка к развертыванию:
@@ -465,30 +465,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ОПЛАТА ======================
-document.getElementById('payButton').addEventListener('click', function() {
-  // Используйте API Cryptomus для создания счета
-  // и получения ссылки на оплату
-  cryptomus.createInvoice({
-    amount: 10, // Сумма в USD
-    currency: 'USD',
-    description: 'Оплата генерации контракта'
-  }).then(function(invoice) {
-    // Перенаправьте пользователя на страницу оплаты
-    window.location.href = invoice.pay_url;
-  });
-});
-
-// Пример проверки статуса и отображения контейнера
-function checkPaymentStatus(invoiceId) {
-  cryptomus.getInvoice(invoiceId).then(function(invoice) {
-    if (invoice.status === 'paid') {
-      // Оплата успешна
-      document.getElementById('downloadContainer').style.display = 'block';
-    } else {
-      // Продолжайте проверять статус
-      setTimeout(function() {
-        checkPaymentStatus(invoiceId);
-      }, 5000); // Проверять каждые 5 секунд
-    }
-  });
+// Функция для получения значения параметра из URL
+function getUrlParameter(name) {
+    var urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
 }
+
+// Проверяем, если статус "paid", то показываем контейнер
+window.onload = function() {
+    var paymentStatus = getUrlParameter("status");
+
+    if (paymentStatus === "paid") {
+        document.getElementById("downloadContainer").style.display = "block"; // Показываем контейнер
+    }
+};
+
+window.onload = function() {
+    var paymentStatus = getUrlParameter("status");
+
+    if (paymentStatus === "paid") {
+        localStorage.setItem("paymentStatus", "paid"); // Сохраняем статус
+    }
+
+    if (localStorage.getItem("paymentStatus") === "paid") {
+        document.getElementById("downloadContainer").style.display = "block";
+    }
+};
