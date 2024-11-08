@@ -22,7 +22,7 @@ function copyBtcAddress() {
 
 // Обработчик кнопки "Начать" на главной странице
 document.getElementById("start-button").addEventListener("click", function() {
-    window.location.href = "token_constructor.html"; // Перенаправление на страницу конструктора
+    window.location.href = "https://dev-geniy.github.io/token-builder/builder"; // Перенаправление на страницу конструктора
 });
 
 const logoTrack = document.querySelector('.logo-track');
