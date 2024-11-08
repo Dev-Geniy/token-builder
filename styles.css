@@ -1,0 +1,258 @@
+body {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 10;
+    padding: auto;
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #00e5ff;
+    margin: 30px 0;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+}
+
+h3 {
+    color: #00e5ff;; /* Задаем белый цвет для заголовков h3 */
+        }
+
+.button-container {
+    display: flex;
+    align-items: center; /* Выравнивание по вертикали */
+    gap: 10px; /* Расстояние между кнопкой и иконкой */
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+/* Контейнер для карточек */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    gap: 10px; /* Уменьшаем gap между карточками */
+}
+
+
+/* Основной стиль для карточек */
+.info-card {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    flex: 1 1 calc(50% - 20px); /* Две карточки в ряд с равными отступами */
+    margin: 10px;
+    cursor: pointer;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Контейнер для карточек */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Иконка внутри карточки */
+.card-icon {
+    font-size: 2.5em;
+    color: #007bff;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.info-card:hover .card-icon {
+    transform: scale(1.1);
+    color: #00aaff;
+}
+
+/* Заголовок карточки */
+.card-title {
+    font-size: 1.3em;
+    color: #f0f0f0;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.card-description {
+    color: #cccccc;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/* Эффекты при наведении на текст */
+.info-card:hover .card-title,
+.info-card:hover .card-description {
+    color: #00aaff;
+    text-shadow: 0 0 6px rgba(0, 170, 255, 0.6);
+}
+
+/* Адаптивность для разных экранов */
+@media (max-width: 768px) {
+    .info-card {
+        flex: 1 1 100%; /* Одна карточка в ряд на маленьких экранах */
+    }
+}
+
+.start-button {
+    background-color: #6f42c1; /* Фиолетовый цвет */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+    animation: pulse 1s infinite; /* Анимация пульсации */
+}
+
+.start-button:hover {
+    background-color: #5a3e9c;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Основной стиль для кнопки "Начать" */
+.start-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.start-button {
+    margin-top: 30px;
+    font-size: 24px;
+    padding: 15px 80px;
+    color: #fff;
+    background-color: #7b68ee;
+    border: none;
+    border-radius: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.start-button:hover {
+    transform: scale(1.05);
+}
+
+/* Пульсация для кнопки "Начать" */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Контейнер для ленты логотипов DEX */
+.logo-banner {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 50px;
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    position: relative;
+}
+
+.logo-track {
+    display: flex;
+    width: calc(100% * 2); /* Удвоение ширины для бесшовной анимации */
+    animation: scroll 20s linear infinite; /* Длительность анимации */
+}
+
+.logo-item {
+    min-width: 80px; /* Ширина логотипа */
+    height: auto;
+    margin-right: 30px; /* Отступ между логотипами */
+    opacity: 0.2; /* Затемнение логотипов */
+    transition: opacity 0.5s; /* Плавный переход для затемнения */
+}
+
+/* Логотипы */
+.dex-logo {
+    width: 100%; /* 100% ширины родительского элемента */
+}
+
+/* Эффект при наведении на логотипы */
+.logo-item:hover {
+    opacity: 1; /* Убираем затемнение при наведении */
+}
+
+/* Анимация движения логотипов */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Перемещение всей ленты */
+    }
+}
+
+/* Скрытие полос прокрутки для всей страницы */
+body {
+    overflow: auto; /* Разрешаем прокрутку, но скрываем полосу */
+    scrollbar-width: thin; /* Firefox: убирает или делает полосу тоньше */
+}
+
+/* Скрытие полос прокрутки на всех элементах */
+*::-webkit-scrollbar {
+    width: 0; /* Убираем горизонтальную полосу для WebKit браузеров */
+    height: 0; /* Убираем вертикальную полосу для WebKit браузеров */
+}
+
+/* Кнопка */
+button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #007bff, #00e5ff);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    animation: pulse 1.5s infinite ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #0056b3, #00bfff);
+    box-shadow: 0 6px 18px rgba(0, 229, 255, 0.5);
+}
