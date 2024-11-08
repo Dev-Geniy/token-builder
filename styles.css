@@ -16,7 +16,7 @@ h1 {
 }
 
 h3 {
-    color: #00e5ff;; /* Задаем белый цвет для заголовков h3 */
+    color: #00e5ff;
         }
 
 .button-container {
@@ -24,11 +24,12 @@ h3 {
     align-items: center; /* Выравнивание по вертикали */
     gap: 10px; /* Расстояние между кнопкой и иконкой */
 }
-
+/* Основной контейнер */
 .main-container {
     max-width: 1200px;
     margin: auto;
     text-align: center;
+    padding: 20px;
 }
 
 .header-title {
@@ -44,12 +45,17 @@ h3 {
 /* Контейнер для карточек */
 .card-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
     margin-bottom: 20px;
-    gap: 10px; /* Уменьшаем gap между карточками */
 }
 
+/* Стиль для строки карточек */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
 
 /* Основной стиль для карточек */
 .info-card {
@@ -59,23 +65,13 @@ h3 {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    flex: 1 1 calc(50% - 20px); /* Две карточки в ряд с равными отступами */
-    margin: 10px;
+    flex: 1;
     cursor: pointer;
 }
 
 .info-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Контейнер для карточек */
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
 }
 
 /* Иконка внутри карточки */
@@ -109,15 +105,20 @@ h3 {
 .info-card:hover .card-title,
 .info-card:hover .card-description {
     color: #00aaff;
-    text-shadow: 0 0 6px rgba(0, 170, 255, 0.6);
+    text-shadow: 0 0 6px rgba(0, 170, 255, 0.8);
 }
 
 /* Адаптивность для разных экранов */
 @media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+
     .info-card {
-        flex: 1 1 100%; /* Одна карточка в ряд на маленьких экранах */
+        width: 95%;
     }
 }
+
 
 .start-button {
     background-color: #6f42c1; /* Фиолетовый цвет */
@@ -255,4 +256,228 @@ button {
 button:hover {
     background: linear-gradient(45deg, #0056b3, #00bfff);
     box-shadow: 0 6px 18px rgba(0, 229, 255, 0.5);
+}
+
+.info-card {
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Пружинный эффект */
+}
+
+.info-card:hover {
+    transform: scale(1.05) translateY(-5px); /* Легкий отскок и смещение */
+}
+
+.info-card:hover .card-icon {
+    transform: scale(1.6) rotate(360deg); /* Увеличение и полное вращение */
+    color: #00aaff;
+    transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.info-card {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-8px) translateX(-5px) scale(1.05); /* Смещаем и увеличиваем */
+    box-shadow: 0 10px 20px rgba(0, 170, 255, 0.5); /* Больше тень */
+}
+
+/* Основные стили для карточки */
+.info-card {
+    cursor: default; /* Убираем изменение вида курсора */
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Базовый стиль для фона при наведении */
+.info-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    filter: brightness(0.25); /* Затемнение */
+    z-index: -1; /* Размещение на заднем плане */
+}
+
+/* Индивидуальные фоны для каждой карточки при наведении */
+.info-card-1:hover::before {
+    background-image: url('https://vflow.ai/wp-content/uploads/2024/02/Crypto-World-10.webp');
+    opacity: 1;
+    transform: scale(1.1); /* Легкое увеличение */
+}
+
+.info-card-2:hover::before {
+    background-image: url('https://cdn.pixabay.com/photo/2024/01/06/06/07/ai-generated-8490759_1280.png');
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.info-card-3:hover::before {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOSTzYmiZGLeFJKlhSsFw5fdWLrVXjAhQz1w&s');
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.info-card-4:hover::before {
+    background-image: url('https://psm7.com/wp-content/uploads/2024/08/12.webp');
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.info-card-5:hover::before {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQheIWwh5tP2G50u5URSpe3v7ZOuSFp_FL6uA&s');
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.info-card-6:hover::before {
+    background-image: url('https://cryptonews.com/wp-content/uploads/sites/4/2024/07/1721813049-1708686229-fidelity-director-bitcoin-market-cap-could-reach-6-trillion-a-quarter-of-monetary-gold-market.jpg');
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Контент внутри карточки */
+.info-card-content {
+    position: relative;
+    z-index: 2; /* Поверх фона */
+}
+
+.info-card h3 {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.info-card:hover h3 {
+    transform: rotate(-3deg); /* Поворот */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Тень для объёма */
+}
+
+/* --------------------------------- */
+/* Блокируем прокрутку страницы во время заставки */
+body.lock-scroll {
+    overflow: hidden;
+}
+
+/* Стиль для затемнения всего контента */
+.page-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Черное затемнение с прозрачностью 20% */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-out; /* Плавное исчезновение */
+}
+  
+/* Анимация заголовка: печатание текста */
+.header-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.1em;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    opacity: 0;
+    cursor: default; /* Убираем изменение вида курсора */
+    animation: typing 3s steps(30) 1s forwards, fadeOutOverlay 1s 4s forwards; /* Печать текста и исчезновение overlay */
+    max-width: 90%;  /* Ограничиваем ширину, чтобы текст не выходил за пределы */
+    word-wrap: break-word; /* Перенос слов на новую строку */
+}
+
+/* Печатающийся текст */
+@keyframes typing {
+    from {
+        width: 0;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Скрытие overlay после завершения анимации */
+@keyframes fadeOutOverlay {
+    to {
+        opacity: 0;
+    }
+}
+
+/* Когда overlay исчезает, показываем основной контент */
+.page-overlay.done {
+    opacity: 0;
+    visibility: hidden; /* Теперь элемент будет невидим, но не блокировать контент */
+}
+
+/* Основной контент */
+.content {
+    opacity: 0;
+    transition: opacity 1s ease-out; /* Плавное появление контента */
+}
+
+/* Когда анимация закончится, показываем основной контент */
+.page-overlay.done + .content {
+    opacity: 1;
+    transition: opacity 1s ease-out;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 2rem; /* Уменьшаем размер шрифта на мобильных устройствах */
+        text-align: center; /* Центрируем заголовок */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-title {
+        font-size: 1.5rem; /* Еще больше уменьшаем размер шрифта на очень маленьких экранах */
+        text-align: center;
+    }
+}
+
+/**/
+.h-title {
+    font-size: 4rem;
+    font-weight: bold;
+    cursor: default; /* Убираем изменение вида курсора */
+    color: white; /* Белый цвет текста */
+    position: relative;
+    text-align: center;
+    letter-spacing: 2px; /* Можно настроить расстояние между буквами */
+    z-index: 1; /* Поверх других элементов */
+    transition: all 0.3s ease; /* Плавный переход для эффектов */
+    
+    /* Добавление размытое отражение */
+    text-shadow: 0 4px 8px rgba(0, 229, 255, 0.4), 0 8px 16px rgba(0, 229, 255, 0.2), 0 16px 32px rgba(0, 229, 255, 0.1);
+}
+
+/* Дополнительно добавим анимацию для интерактивности */
+.h-title:hover {
+    text-shadow: 0 8px 16px rgba(0, 229, 255, 0.5), 0 16px 32px rgba(0, 229, 255, 0.3), 0 32px 64px rgba(0, 229, 255, 0.15);
+    transform: translateY(-10px); /* Легкое поднимание текста при наведении */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .h-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .h-title {
+        font-size: 2rem;
+    }
 }
