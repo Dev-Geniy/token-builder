@@ -250,10 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const scanResult = document.getElementById('scanResult');
         const generatedCode = document.getElementById('generatedCode').textContent; // Получаем код из #generatedCode
         const steps = [
-            "Проверка на переполнение...",
-            "Проверка на несанкционированный доступ...",
-            "Анализ логики функции...",
-            "Сканирование общих уязвимостей..."
+            "Checking for overflow...",
+            "Checking for unauthorized access...",
+            "Function logic analysis...",
+            "Scanning common vulnerabilities..."
         ];
         let stepIndex = 0;
         scanResult.innerHTML = ''; // Очистка предыдущих результатов
@@ -270,10 +270,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Проверка на корректность имени токена
         const tokenNameRegex = /^[A-Za-z0-9]{3,30}$/;
         if (!tokenName || !tokenNameRegex.test(tokenName)) {
-            scanStatus.textContent = 'Ошибка: Некорректное имя токена!';
+            scanStatus.textContent = 'Error: Invalid token name!';
             scanResult.innerHTML = `
-                <div class="error">Имя токена должно содержать от 3 до 30 символов и состоять только из букв и цифр.</div>
-                <div class="example">Пример правильного имени: ExampleToken</div>
+                <div class="error">The token name must contain from 3 to 30 characters and consist only of letters and numbers.</div>
+                <div class="example">Example of a correct name: ExampleToken</div>
             `;
             return; // Останавливаем дальнейшее выполнение функции сканирования
         }
@@ -281,10 +281,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Проверка на корректность символа токена
         const tokenSymbolRegex = /^[A-Z0-9]{3,5}$/;
         if (!tokenSymbol || !tokenSymbolRegex.test(tokenSymbol)) {
-            scanStatus.textContent = 'Ошибка: Некорректный символ токена!';
+            scanStatus.textContent = 'Error: Invalid token symbol!';
             scanResult.innerHTML = `
-                <div class="error">Символ токена должен быть от 3 до 5 заглавных букв или цифр.</div>
-                <div class="example">Пример правильного символа: EXM</div>
+                <div class="error">The token symbol must be 3 to 5 capital letters or numbers.</div>
+                <div class="example">Example of a correct character: EXM</div>
             `;
             return; // Останавливаем дальнейшее выполнение функции сканирования
         }
@@ -312,14 +312,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!vulnerabilities.length) {
             progressBar.classList.add('secure');
-            scanStatus.textContent = 'Сканирование завершено: Уязвимости не найдены!';
-            scanResult.innerHTML = '<div class="secure-icon">✔️</div> <div>Ваш код защищен</div>';
+            scanStatus.textContent = 'Your code is protected';
+            scanResult.innerHTML = '<div class="secure-icon">✔️</div> <div>Your code is protected</div>';
         } else {
             progressBar.classList.add('vulnerable');
-            scanStatus.textContent = 'Сканирование завершено: Обнаружены уязвимости!';
+            scanStatus.textContent = 'Scan completed: Vulnerabilities detected!';
             scanResult.innerHTML = `
                 <div class="vulnerable-icon">⚠️</div> 
-                <div>Обнаружены уязвимости</div>
+                <div>Оvulnerabilities discovered</div>
                 <ul>
                     ${vulnerabilities.map(vuln => `<li>${vuln}</li>`).join('')}
                 </ul>
@@ -332,15 +332,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Пример простого анализа для уязвимостей
         if (/\b\d{10,}\b/.test(code)) {
-            vulnerabilities.push('Возможное переполнение из-за больших чисел');
+            vulnerabilities.push('Possible overflow due to large numbers');
         }
 
         if (/\b(admin|password|root)\b/i.test(code)) {
-            vulnerabilities.push('Возможность несанкционированного доступа (admin, password, root)');
+            vulnerabilities.push('Possibility of unauthorized access (admin, password, root)');
         }
 
         if (/\b(OR\s1=1|--|;--|DROP\sTABLE)\b/i.test(code)) {
-            vulnerabilities.push('Возможная SQL-инъекция');
+            vulnerabilities.push('Possible SQL injection');
         }
 
         return vulnerabilities;
