@@ -6,14 +6,31 @@
     <link rel="stylesheet" href="b-styles.css">
 </head>
 <body>
-    <h1>Token Contract Builder</h1>
+  
+   <!-- Лента с логотипами популярных DEX бирж -->
+  <div class="logo-banner">
+    <div class="logo-track">
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/uniswap-uni-logo.png" alt="Uniswap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/pancakeswap-cake-logo.png" alt="PancakeSwap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/sushiswap-sushi-logo.png" alt="SushiSwap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/biswap-bsw-logo.png" alt="Biswap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/1inch-1inch-logo.png" alt="1inch Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/balancer-bal-logo.png" alt="Balancer Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/curve-dao-token-crv-logo.png" alt="Curve Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/bancor-bnt-logo.png" alt="Bancor Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/kyber-network-knc-logo.png" alt="Kyber Logo" class="dex-logo"></div>
+</div>
+  
+    <h1 class="title">Token Contract Builder</h1>
+     
+ <h3> Start creating, simply fill out the fields with a name, your token, symbol, network to deploy, transaction fees and other unique features of your new token...</h3>
   
 <div class="input-container">  
     <form id="tokenForm">
         <!-- Token Name Input -->
         <label for="tokenName">Token Name:</label>
         <input type="text" id="tokenName" placeholder="MyToken" />
-
+      
         <!-- Token Symbol Input -->
         <label for="tokenSymbol">Token Symbol:</label>
         <input type="text" id="tokenSymbol" placeholder="MTK" />
@@ -57,13 +74,32 @@
     <label><input type="checkbox" id="lockTokens"> Lock Tokens</label>
     <label><input type="checkbox" id="airdrop"> Airdrop</label>
     <label><input type="checkbox" id="donate"> Donate</label>
-</div>
-
+   </div>
+  </div>
+ 
+    <div id="buttonContainer">
         <!-- Generate Button -->
         <button id="generateButton" type="button">Generate Contract</button>
     </form>
-
-
+<div class="steps-description">
+  <h3>You are closer than ever! Click the button and next step download your smart contract!</h3>
+</div>
+  </div>
+</div>
+ <!-- Лента с логотипами популярных DEX бирж -->
+  <div class="logo-banner">
+    <div class="logo-track">
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/uniswap-uni-logo.png" alt="Uniswap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/pancakeswap-cake-logo.png" alt="PancakeSwap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/sushiswap-sushi-logo.png" alt="SushiSwap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/biswap-bsw-logo.png" alt="Biswap Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/1inch-1inch-logo.png" alt="1inch Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/balancer-bal-logo.png" alt="Balancer Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/curve-dao-token-crv-logo.png" alt="Curve Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/bancor-bnt-logo.png" alt="Bancor Logo" class="dex-logo"></div>
+        <div class="logo-item"><img src="https://cryptologos.cc/logos/kyber-network-knc-logo.png" alt="Kyber Logo" class="dex-logo"></div>
+</div>
+  
     <!-- Модальное окно для отображения кода -->
 <div id="modal" class="modal">
     <div class="modal-content">
@@ -73,6 +109,7 @@
       
       <div id="buttonContainer">
            <div id="scanContainer">
+             <h3>Check your new smart contract for security and errors</h3>
                  <div class="button-container">
         <!-- Значок "i" для открытия модального окна с информацией -->
         <img id="infoIcon" class="info-icon" src="https://cdn1.iconfinder.com/data/icons/shopping-26/48/info-64.png" alt="Информация" /><div id="scanStatus">Ready to scan</div>
@@ -111,26 +148,26 @@
     </div>
 </div> 
       
-        <h3>Then we give you, you get:</h3>
-        <div class="benefits">
-            <div class="benefit-item">
-                <img src="https://cdn1.iconfinder.com/data/icons/shopping-26/48/shield-check-512.png" alt="Безопасность">
-                <p>1. Secure and tested code, ready to go. The token meets all standards for listing on world exchanges.
-</p>
-            </div>
-            <div class="benefit-item">
-                <img src="https://cdn0.iconfinder.com/data/icons/education-22/48/steps-128.png" alt="Документация">
-                <p>2. Complete documentation on the Read.me code and a step-by-step plan and tips from professionals for token development.</p>
-            </div>
-            <div class="benefit-item">
-                <img src="https://cdn1.iconfinder.com/data/icons/office-22/48/laptop-64.png" alt="Поддержка">
-                <p>3. Additional support, testing, assistance with smart contract deployment and launch.</p>
-            </div>
-            <div class="benefit-item">
-                <img src="https://cdn0.iconfinder.com/data/icons/education-22/48/idea-128.png" alt="Обновления">
-                <p>4. Recommendation database, lists of services and tools for tracking statistics, monitoring and managing smart contracts and users.</p>
-            </div>
-        </div>
+<h3>Then we give you, you get:</h3>
+<div class="benefits">
+  <div class="benefit-item">
+    <img src="https://cdn1.iconfinder.com/data/icons/shopping-26/48/shield-check-512.png" alt="Безопасность" class="benefit-icon">
+    <p>1. Secure and tested code, ready to go. The token meets all standards for listing on world exchanges.</p>
+  </div>
+  <div class="benefit-item">
+    <img src="https://cdn0.iconfinder.com/data/icons/education-22/48/steps-128.png" alt="Документация" class="benefit-icon">
+    <p>2. Complete documentation on the Read.me code and a step-by-step plan and tips from professionals for token development.</p>
+  </div>
+  <div class="benefit-item">
+    <img src="https://cdn1.iconfinder.com/data/icons/office-22/48/laptop-64.png" alt="Поддержка" class="benefit-icon">
+    <p>3. Additional support, testing, assistance with smart contract deployment and launch.</p>
+  </div>
+  <div class="benefit-item">
+    <img src="https://cdn0.iconfinder.com/data/icons/education-22/48/idea-128.png" alt="Обновления" class="benefit-icon">
+    <p>4. Recommendation database, lists of services and tools for tracking statistics, monitoring and managing smart contracts and users.       </p>
+  </div>
+</div>
+      
   <div id="buttonContainer">
       <div id="PayContainer">
 <p style="text-align: center;">Pay to CRYPTO: <strike>$200</strike> now for only <strong>25 USD</strong> — an exclusive offer! <br> Don't miss the chance to get access to this amazing deal!</p>
@@ -155,6 +192,6 @@
         <p class="centered-text">Documents about the code itself with information and step-by-step instructions for setting it up, launching it, with tips for promotion and useful free programs are included and all of the above.</p>
     </div>
 </div>
-    <script src="b-script.js"></script>
+    <script src=b-script.js"></script>
 </body>
 </html>
