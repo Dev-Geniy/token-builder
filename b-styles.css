@@ -5,6 +5,52 @@ body {
     background-color: #1b1b1b; /* Темный фон */
 }
 
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white; /* Белый цвет текста */
+    position: relative;
+    text-align: center;
+    letter-spacing: 2px;
+    z-index: 1;
+    transition: all 0.3s ease;
+    cursor: default; /* Убираем изменение вида курсора */
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white; /* Белый цвет текста */
+    position: relative;
+    text-align: center;
+    letter-spacing: 2px; /* Можно настроить расстояние между буквами */
+    z-index: 1; /* Поверх других элементов */
+    transition: all 0.3s ease; /* Плавный переход для эффектов */
+    
+    /* Добавление размытое отражение */
+    text-shadow: 0 4px 8px rgba(0, 229, 255, 0.4), 0 8px 16px rgba(0, 229, 255, 0.2), 0 16px 32px rgba(0, 229, 255, 0.1);
+}
+
+/* Дополнительно добавим анимацию для интерактивности */
+.title:hover {
+    text-shadow: 0 8px 16px rgba(0, 229, 255, 0.5), 0 16px 32px rgba(0, 229, 255, 0.3), 0 32px 64px rgba(0, 229, 255, 0.15);
+    transform: translateY(-10px); /* Легкое поднимание текста при наведении */
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+}
+
+
 /* Заголовок */
 h1 {
     text-align: center;
@@ -136,7 +182,10 @@ button {
 button:hover {
     background: linear-gradient(45deg, #0056b3, #00bfff);
     box-shadow: 0 6px 18px rgba(0, 229, 255, 0.5);
+    transform: scale(1.1); /* Увеличение кнопки при наведении */
+    transition: transform 0.3s ease-in-out; /* Плавное увеличение */
 }
+
 
 /* Эффект затемнения фона модального окна */
 .modal {
@@ -276,14 +325,13 @@ body {
 #buttonContainer {
     display: block; /* Это позволяет контейнеру обертывать кнопку */
     padding: 15px; /* Отступы внутри контейнера */
-    border: 2px dashed white; /* Белая штриховая граница */
-    border-radius: 8px; /* Скругление углов */
+    border: 5px dashed #255; /* Белая штриховая граница */
+    border-radius: 10px; /* Скругление углов */
     background-color: transparent; /* Прозрачный фон */
     box-sizing: border-box; /* Учитывать границу в общей ширине/высоте */
 }
 
 /* ИНФО МОДАЛ*/
-/* Стили для значка "i" */
 /* Контейнер для кнопки и иконки, чтобы они располагались в строку */
 .button-container {
     display: flex;
@@ -352,4 +400,165 @@ body {
 
 .info-icon:hover {
     color: #ff9800;
+}
+
+
+/*=====*/
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.step {
+  text-align: center;
+  width: 33%; /* Каждый шаг занимает треть от ширины контейнера */
+}
+
+.step-icon {
+  width: 50px; /* Размер иконки */
+  height: 50px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out; /* Анимация при наведении */
+}
+
+.step:hover .step-icon {
+  transform: scale(1.2); /* Увеличение иконки при наведении */
+}
+
+.step span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 8px;
+}
+
+/* Стиль для выделения активного шага */
+.step.active .step-icon {
+  background-color: #4CAF50; /* Зеленый цвет для активного шага */
+  color: #fff;
+}
+
+.step.active span {
+  color: #4CAF50;
+}
+
+/* Стиль для названий шагов */
+.step span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #d3d3d3; /* Очень светлый серый цвет для названия */
+  margin-top: 8px;
+}
+
+/* Стиль для текста шага */
+.step p {
+  font-size: 12px;
+  color: #e0e0e0; /* Немного светлее для текста шага */
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+.steps-description {
+  display: flex; /* Используем flexbox для выравнивания */
+  justify-content: center; /* Центрируем по горизонтали */
+  align-items: center; /* Центрируем по вертикали */
+  text-align: center; /* Выравниваем текст по центру внутри контейнера */
+  color: white;
+  height: 100%; /* Устанавливаем высоту для вертикального выравнивания */
+  padding: 20px; /* Добавляем отступы, если нужно */
+}
+
+.steps-description h3 {
+  margin: 0; /* Убираем отступы у заголовка */
+}
+
+/* ИКОНКИ В МОДАЛЬНОМ */
+.benefits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+
+  .benefit-item {
+    text-align: center;
+    width: 22%; /* Adjust width as needed */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .benefit-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+    transition: transform 0.6s ease-in-out; /* Slightly slower for dramatic effect */
+  }
+
+  .benefit-item:hover .benefit-icon {
+    transform: scale(1.2) rotate(720deg); /* Icon grows and spins on hover */
+  }
+
+  .benefit-item:hover p {
+    transform: rotate(-2deg); /* Slightly tilt text */
+  }
+
+  @media (max-width: 768px) {
+    .benefit-item {
+      width: 45%; /* Adjust for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .benefit-item {
+      width: 100%; /* Full width on very small screens */
+    }
+  }
+
+/* Контейнер для ленты логотипов DEX */
+.logo-banner {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 50px;
+    background-color: #1a1a1a;
+    padding: 15px 0;
+    position: relative;
+}
+
+.logo-track {
+    display: flex;
+    width: calc(100% * 2); /* Удвоение ширины для бесшовной анимации */
+    animation: scroll 20s linear infinite; /* Длительность анимации */
+}
+
+.logo-item {
+    min-width: 60px; /* Ширина логотипа */
+    height: auto;
+    margin-right: 30px; /* Отступ между логотипами */
+    opacity: 0.2; /* Затемнение логотипов */
+    transition: opacity 0.5s; /* Плавный переход для затемнения */
+}
+
+/* Логотипы */
+.dex-logo {
+    width: 100%; /* 100% ширины родительского элемента */
+}
+
+/* Эффект при наведении на логотипы */
+.logo-item:hover {
+    opacity: 1; /* Убираем затемнение при наведении */
+}
+
+/* Анимация движения логотипов */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); /* Перемещение всей ленты */
+    }
 }
